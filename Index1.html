@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal_Portfolio</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div id="page1">
+        <header class="header">
+            <a href="#" class="logo">Ronak.</a>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#Skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact Me</a>
+            </nav>
+        </header>
+        <section class="home" id="home">
+
+            <div class="text-content">
+                <h2>Ronak Sawant</h2>
+                <h5>Front-End Developer</h5>
+                <p>Ronak is a beginner front-end developer, crafting captivating websites that blend aesthetics with functionality. With a keen eye for design and a passion for coding, he brings digital visions to life, seamlessly integrating user experience and visual appeal.</p>
+                <button class="btn"><a href="Images/CV - a4 (1).pdf" target="_blank" style="color: white;">Download C.V</a></button>
+            </div>
+            <div class="cover">
+                <div class="image"></div>
+                <div class="layout"></div>
+            </div>
+        </section>
+    </div>
+    <section class="about" id="about">
+        <div class="image-cover">
+
+            <div class="img">
+                <h2>RONAK SAWANT</h2>
+                <h5>WEBSITE DESIGNER</h5>
+                <img id="image" src="Images/MyImage.jpeg" alt="">
+            </div>
+        </div>
+        <div class="about-text">
+            <h3 class="title"><i class='bx bx-user'></i>ABOUT ME</h3>
+            <p>I am a second-year Computer Science Engineering student at VIT 
+                Vellore.  
+                                Passionate about technology, coding, and solving real-world 
+                problems,  
+                                I am actively involved in various coding competitions and 
+                open-source projects.  
+                                My journey in the world of technology is just beginning, and I 
+                am excited about the endless possibilities ahead!</p>
+        </div>
+    </section>
+    <section class="Skills" id="Skills">
+        <h3 class="title"><i class='bx bx-user'></i>SKILLS</h3>
+        <div class="skill-container">
+            <div class="skills-content">
+                <i class='bx bx-code-alt'></i>
+                <h5>Frontend Web Developer</h5>
+                <p>I'm well-versed in front-end development, mastering HTML, CSS, and JavaScript, with a proficiency in React.js. My skills enable creating dynamic, interactive, and visually appealing web applications. Your expertise in these technologies that craft engaging user experiences and navigate the complexities of modern web development effortlessly.</p>
+                <button class="btn" onclick="myFunction()">Read More</button>
+                <p id="rm"></p>
+            </div>
+            <div class="skills-content">
+                <i class='bx bx-signal-5'></i>
+                <h5>Backend Web Developer</h5>
+                <p>I'm skilled in backend development, proficient in MongoDB for NoSQL databases, SQL for relational databases, and Django for web framework tasks. My expertise allows you to design robust database architectures, manage data effectively, and build scalable, secure, and high-performance web applications.</p>
+                <button class="btn" onclick="myFunction1()">Read More</button>
+                <p id="rm1"></p>
+            </div>
+        </div>
+    </section>
+    <section class="education" id="education">
+        <h3 class="title"><i class='bx bx-book-open'></i>EDUCATION</h3>
+        <div class="row">
+            <div class="column">
+                <div class="education-content">
+                    <div class="year"><i class='bx bx-time'>2007-2022</i></div>
+                    <h2>Abhinav English School</h2>
+                    <p>I have passed my 12th from CBSE board with 92.1%</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="education-content">
+                    <div class="year"><i class='bx bx-time'></i>2022-2026</div>
+                    <h2>Vellore Institute of Technology</h2>
+                    <p>I'm pursuing my Btech from Vit Vellore.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="title"><i class='bx bx-headphone'></i>CONTACT ME</h2>
+        <form action="#" id="myform">
+            <div class="input-box">
+                <input type="text" required placeholder="Full Name">
+                <input type="email" required placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="tel" minlength="10" maxlength="10" placeholder="Mobile Number">
+                <input type="text" required placeholder="Subject For">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+    <footer>
+        <div class="text">
+            <p> Copyright © Ronak Sawant.</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/ronak-sawant-aa6b6924b" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/sronakganesh/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://github.com/ronak-2004" target=""><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/be72b38e80.js" crossorigin="anonymous"></script>
+
+    <script>
+        const image = document.getElementById('image');
+
+        const a1 = image.src;
+        const a2 = 'Images/work-1.png';
+
+        image.addEventListener('mouseover', () => {
+            image.src = a2;
+        });
+        image.addEventListener('mouseout', () => {
+            image.src = a1;
+        });
+        <!--------------------------------------------->
+        window.addEventListener('beforeunload',function(event)
+        {
+            var form = document.getElementById('myform');
+            if(formHasUnsavedData(form))
+            {
+                event.preventDefault();
+                event.returnValue = '';
+                return "You Have Unsaved Data in form."
+            }
+        });
+        function formHasUnsavedData(form)
+        {
+            var inputs = form.querySelectorAll('input');
+            for(var i=0;i<inputs.length;i++){
+                if (inputs[i].value.trim() !=''){
+                    return true;
+                }
+            }
+            return false;
+        }
+    
+        function myFunction() {
+            document.getElementById("rm").innerHTML = "Visit My";
+        }
+        function myFunction1() {
+            document.getElementById("rm1").innerHTML = "Github Profile";
+        }
+
+    </script>
+</body>
+
+</html>
